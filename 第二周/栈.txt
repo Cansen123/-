@@ -1,0 +1,19 @@
+int stack[100010];
+int hh=0,tt=0;
+void push1(int x)
+{
+    stack[++tt]=x;
+}
+void pop1()
+{
+    tt--;
+}
+bool empty1()
+{
+    if(hh==tt)return 1;
+    else return 0;
+}
+int query()
+{
+    return stack[tt];
+}

@@ -1,0 +1,13 @@
+int insert(int x)
+{
+    int k=(x%N+N)%N;
+    while(map[k]!=-1 && map[k]!=x)
+    {
+        k++;
+        if(k==N)
+        {
+            k=1;
+        }
+    }
+    return k;
+}

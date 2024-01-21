@@ -1,0 +1,24 @@
+int e[100010];//记录插入的值e[2]  e[3]
+int ne[1000010];//第X个数字的下一个下标ne[x] ne[1]=4
+int idx=1,head=-1;
+void insert1(int k,int x)
+{
+    e[idx]=x;
+    ne[idx]=ne[k];
+    ne[k]=idx;
+    idx++;
+}
+void shanchu(int k)
+{
+    if(k==0){
+        head=ne[head];
+    }
+    ne[k]=ne[ne[k]];
+}
+void ahead(int x)
+{
+    e[idx]=x;
+    ne[idx]=head;
+    head=idx;
+    idx++;
+}

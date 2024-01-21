@@ -1,0 +1,27 @@
+int queue[10010];
+int hh=1,tt=0;
+void push1(int x)
+{
+    queue[++tt]=x;
+}
+void pop1()
+{
+    if(hh>tt){
+        cout<<"ERR_CANNOT_POP"<<endl;
+    }
+    else
+    {
+        hh++;
+    }
+}
+int query1()
+{
+    if(hh>tt){
+        cout<<"ERR_CANNOT_QUERY"<<endl;
+    }
+    return queue[hh];
+}
+int size1()
+{
+    return tt-hh+1;
+}
