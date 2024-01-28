@@ -1,0 +1,21 @@
+int p[1000010];
+void init()
+{
+    for(int i=1;i<=n;i++)p[i]=i;
+}
+int find(int x)
+{
+    if(p[x]!=x)
+    {
+        p[x]=find(p[x]);
+    }
+    return p[x];
+}
+void do_p(int a,int b)
+{
+    if(a>b)swap(a,b);
+    if(find(a)!=find(b))
+    {
+        p[find(b)]=find(a);
+    }
+}

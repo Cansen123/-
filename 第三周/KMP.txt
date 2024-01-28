@@ -1,0 +1,33 @@
+string a,b;
+int ne[1000010];
+void pre_kmp()
+{
+    for(int i=2,j=0;a[i];i++)
+    {
+        while(j && a[i]!=a[j+1])j=ne[j];
+        if(a[i]==a[j+1])j++;
+        ne[i]=j;
+    }
+}
+void kmp()
+{
+    for(int i=1,j=0;b[i];i++)
+    {
+        while(j && b[i]!=a[j+1])j=ne[j];
+        if(b[i]==a[j+1])j++;
+        if(j==a.size()-1)
+        {
+            cout<<i-j+1<<endl;
+            j=ne[j];
+        }
+    }
+}
+int main()
+{
+    cin>>a>>b;
+    a=" "+a;
+    b=" "+b;
+    pre_kmp();
+    kmp();
+    return 0;
+}

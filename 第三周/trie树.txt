@@ -1,0 +1,27 @@
+int trie[100010][30];
+int idx=0;
+void charu(string a)
+{
+    int p=0;
+    for(int i=0;a[i];i++)
+    {
+        int x=a[i]-'a';
+        if(!trie[p][x])
+        {
+            trie[p][x]=++idx;
+        }
+        p=trie[p][x];
+    }
+}
+void find(string b)
+{
+    int p=0;
+    for(int i=0;b[i];i++)
+    {
+        int x=b[i]-'a';
+        if(!trie[p][x])
+        {
+            
+        }
+    }
+}
