@@ -1,0 +1,20 @@
+void bfs()
+{
+    queue<int>q;
+    q.push(root);
+    st[root]=true;
+    while(q.size())
+    {
+        int t=q.front();
+        q.pop();
+        cout<<t<<" ";
+        for(auto i:z[t])
+        {
+            if(!st[i])
+            {
+                st[i]=true;
+                q.push(i);
+            }
+        }
+    }
+}

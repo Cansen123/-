@@ -1,0 +1,10 @@
+void dfs(int x)
+{
+    cout<<x<<" ";
+    st[x]=true;
+    for(auto i:z[x])
+    {
+        if(!st[i])
+        dfs(i);
+    }
+}
